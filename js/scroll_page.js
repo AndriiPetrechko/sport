@@ -16,4 +16,43 @@ $(document).ready(function(){
        
      });
 
-});
+     /* change dots onscroll page*/
+     $(window).scroll(function (event) {
+        if ($("#first_page").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+            $("#first_dot").addClass('scroll_item_active');
+            $("#second_dot").removeClass('scroll_item_active');
+            $("#third_dot").removeClass('scroll_item_active');
+            $("#fours_dot").removeClass('scroll_item_active');
+            $("#fives_dot").removeClass('scroll_item_active');
+        }
+        if ($("#second_page").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+            $("#second_dot").addClass('scroll_item_active');
+            $("#first_dot").removeClass('scroll_item_active');
+            $("#third_dot").removeClass('scroll_item_active');
+            $("#fours_dot").removeClass('scroll_item_active');
+            $("#fives_dot").removeClass('scroll_item_active');
+            
+        }
+        if ($("#third_page").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+            $("#third_dot").addClass('scroll_item_active');
+            $("#first_dot").removeClass('scroll_item_active');
+            $("#second_dot").removeClass('scroll_item_active');
+            $("#fours_dot").removeClass('scroll_item_active');
+            $("#fives_dot").removeClass('scroll_item_active');
+        }
+        if ($("#testimonials").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+            $("#fours_dot").addClass('scroll_item_active');
+            $("#first_dot").removeClass('scroll_item_active');
+            $("#second_dot").removeClass('scroll_item_active');
+            $("#third_dot").removeClass('scroll_item_active');
+            $("#fives_dot").removeClass('scroll_item_active');
+        }
+        if ($("#footer").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+            $("#first_dot").removeClass('scroll_item_active');
+            $("#second_dot").removeClass('scroll_item_active');
+            $("#third_dot").removeClass('scroll_item_active');
+            $("#fours_dot").removeClass('scroll_item_active');
+            $("#fives_dot").addClass('scroll_item_active');
+        }
+    });
+}); 
